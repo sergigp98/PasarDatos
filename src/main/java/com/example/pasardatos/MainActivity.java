@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText nombre,telefono;
     Button btnPasar, btnPasarDatos;
+    final static String TAG1="nombre", TAG2="telefono";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn1:
+           /* case R.id.btn1:
                 String palabra = nombre.getText().toString();
                 String numero = telefono.getText().toString();
                 if (palabra.isEmpty()) {
@@ -48,6 +49,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //Para pasar a otra pantalla, es una accion
                     Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                     startActivity(intent);
+                }
+
+                break;*/
+            case R.id.btn1:
+                if(!nombre.getText().toString().isEmpty() && telefono.getText().toString().length()==9){
+                    int telefonoRec = Integer.valueOf(telefono.getText().toString());
+                    String nombreRec = nombre.getText().toString();
+                    Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                    intent.putExtra(TAG1,nombreRec);
+                    intent.putExtra(TAG2, telefonoRec);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Faltan cosas", Toast.LENGTH_SHORT).show();
                 }
 
                 break;

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:hint="Telefono"
         android:drawableLeft="@android:drawable/btn_star"
-        android:maxLines="1"
+        android:maxLength="9"
         android:layout_margin="20dp"
         android:id="@+id/telefono"
         android:inputType="number"/>
