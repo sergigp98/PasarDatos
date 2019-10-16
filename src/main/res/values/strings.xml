@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PasarDatos</string>
+    <string name="app_enorabuena">Enhorabuena</string>
+    <string name="app_telefono">Tu telefono es: </string>
+</resources>
